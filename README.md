@@ -13,7 +13,7 @@ Netflix-GPT
 #Implement sign-in, sign-up api using firebase
 #Created redux store with user slice.
 #Implemented sign-out
-#update profile
+#Update profile
 
 Features need to build:
 Login/SignUP Page
