@@ -7,6 +7,9 @@ Netflix-GPT
 #Signup form
 #form validation
 #useRef hook
+#firebase setup
+#Deploying our project to production
+#Create Signup user account in firebase
 
 Features need to build:
 Login/SignUP Page
@@ -28,4 +31,4 @@ Steps to deploy projects in firebase:
 0-install firebase cli : npm install -g firebase-tools
 1-Firebase login : firebase login
 2- Initialise firebase : firebase init
-3-Deploy command : firebase deploy
+3-Deploy command : firebase deploy -Before deploying we need to build our project by 'npm build'
