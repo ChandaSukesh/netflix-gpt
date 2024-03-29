@@ -1,11 +1,30 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
+import { checkValidateData } from "../utils/validate";
 
 const Login = () => {
-  const [showSign, setShowSignIn] = useState(true);
+  const [showSignIn, setShowSignIn] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+  const email = useRef(null);
+  const password = useRef(null);
+  const name = useRef(null);
 
   const toggleHandler = () => {
-    setShowSignIn(!showSign);
+    setShowSignIn(!showSignIn);
+  };
+
+  const buttonClickHandler = (e) => {
+    // Validate the form data
+    const message = checkValidateData(
+      email.current.value,
+      password.current.value,
+      showSignIn ? null : name.current.value,
+      showSignIn
+    );
+
+    setErrorMessage(message);
+
+    // Sign-in-Sign-up
   };
 
   return (
@@ -17,32 +36,42 @@ const Login = () => {
         className="absolute"
       />
 
-      <form className="w-3/12 p-12 bg-black absolute mx-auto my-36 right-0 left-0 text-white rounded-lg bg-opacity-80">
+      <form
+        onSubmit={(e) => e?.preventDefault()}
+        className="w-3/12 p-12 bg-black absolute mx-auto my-36 right-0 left-0 text-white rounded-lg bg-opacity-80"
+      >
         <h1 className="font-bold text-3xl py-4">
-          {showSign ? "Sign In" : "Sign Up"}
+          {showSignIn ? "Sign In" : "Sign Up"}
         </h1>
-        {!showSign && (
+        {!showSignIn && (
           <input
             type="text"
             placeholder="Full Name"
             className="p-2 my-4 w-full bg-gray-700"
+            ref={name}
           />
         )}
         <input
           type="text"
           placeholder="Email Address"
           className="p-2 my-4 w-full bg-gray-700"
+          ref={email}
         />
         <input
           type="password"
           placeholder="Password"
           className="p-2 my-4 w-full bg-gray-700"
+          ref={password}
         />
-        <button className="p-4 my-6 bg-red-700 w-full">
-          {showSign ? "Sign In" : "Sign Up"}
+        <p className="text-red-500 font-bold text-md py-2">{errorMessage}</p>
+        <button
+          className="p-4 my-6 bg-red-700 w-full"
+          onClick={buttonClickHandler}
+        >
+          {showSignIn ? "Sign In" : "Sign Up"}
         </button>
         <p className="py-4 cursor-pointer" onClick={toggleHandler}>
-          {showSign
+          {showSignIn
             ? "New to Netflix? Sign Up Now"
             : "Already registered user? Sign In Now"}
         </p>

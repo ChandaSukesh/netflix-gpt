@@ -2,8 +2,11 @@ Netflix-GPT
 #Create react-app
 #tailwind css setup
 #Header
+#routing of app
 #Login form
 #Signup form
+#form validation
+#useRef hook
 
 Features need to build:
 Login/SignUP Page
