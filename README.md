@@ -23,3 +23,9 @@ Browse Page -Comes only after authentication other we wil get Login/SignUP Page
 -Netflix GPT
 -with search bar
 -Movie Suggestions
+
+Steps to deploy projects in firebase:
+0-install firebase cli : npm install -g firebase-tools
+1-Firebase login : firebase login
+2- Initialise firebase : firebase init
+3-Deploy command : firebase deploy
