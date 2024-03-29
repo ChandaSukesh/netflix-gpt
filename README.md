@@ -10,6 +10,8 @@ Netflix-GPT
 #firebase setup
 #Deploying our project to production
 #Create Signup user account in firebase
+#Implement sign-in, sign-up api using firebase
+#Created redux store with user slice.
 
 Features need to build:
 Login/SignUP Page
@@ -32,3 +34,7 @@ Steps to deploy projects in firebase:
 1-Firebase login : firebase login
 2- Initialise firebase : firebase init
 3-Deploy command : firebase deploy -Before deploying we need to build our project by 'npm build'
+
+Steps to install and configure Redux:
+npm install -D @reduxjs/toolkit
+npm install react-redux
