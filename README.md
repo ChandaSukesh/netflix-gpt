@@ -17,6 +17,9 @@ Netflix-GPT
 #Bug Fix:Sign up user displayName
 #Bug Fix:If the use is not logged in Redirect/browse to login page and vice versa.
 #unsubscribe the onAuthStateChanged callback
+#created constant file
+#Register TMDB API & create an app & get access token.
+#GET data from TMDB Now playing movies list API.
 
 Features need to build:
 Login/SignUP Page
