@@ -12,7 +12,7 @@ const Header = () => {
 
   // on auth change- This is used to check authentication and to update our user store
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // sign in case
         const { uid, email, displayName } = user;
@@ -24,6 +24,8 @@ const Header = () => {
         navigate("/");
       }
     });
+    //unsubscribe when components unmounts, unsubscribe is provided by firebase
+    return () => unsubscribe();
   }, []);
 
   const signOutHandler = () => {
