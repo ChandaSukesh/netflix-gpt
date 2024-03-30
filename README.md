@@ -5,7 +5,7 @@ Netflix-GPT
 #routing of app
 #Login form
 #Signup form
-#form validation
+#Form validation
 #useRef hook
 #firebase setup
 #Deploying our project to production
@@ -14,6 +14,8 @@ Netflix-GPT
 #Created redux store with user slice.
 #Implemented sign-out
 #Update profile
+#Bug Fix:Sign up user displayName
+#Bug Fix:If the use is not logged in Redirect/browse to login page and vice versa.
 
 Features need to build:
 Login/SignUP Page
